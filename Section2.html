@@ -5,19 +5,21 @@
 </head>
 
 <body>
-   <p id="TestID">ID Selector</p>
-   <p class="TestClass">Class Selector</p>
-   <p>Element Selector</p>
+   <p id="TestID">IDSelector </p>
+   <p class="TestClass">ClassSelector </p>
+   <p>ElementSelector </p>
 </body>
-
-</html>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
 <script>
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
-        console.log($("p").text())
-        console.log($(".TestClass").text())
-        console.log($("TestID").text())
+        //Element Selector
+        console.log("元素選取器", $("p").text())
+        //Class Selector
+        console.log($("類別選取器",".TestClass").text())
+        //ID Selector
+        console.log($("元素選取器","#TestID").text())
      });
 </script>
+</html>
