@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p id="ex1">ex1</p>
+    <p id="ex2">ex2</p>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        //Click Event
+        $("#ex1").click(function (d) {
+            console.log($("#ex1").text())
+            //console.log($(d.currentTarget).text())
+        })
+        //dbclick event
+        $("#ex2").dblclick(function (d) {
+            alert($("#ex1").text())
+            //alert($(d.currentTarget).text())
+        });
+
+    });
+</script>
+
+</html>
