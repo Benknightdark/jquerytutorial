@@ -5,8 +5,25 @@
 </head>
 
 <body>
+    <h2>Click Event</h2>
     <p id="ex1">ex1</p>
+
+    <h2>dbClick Event</h2>
     <p id="ex2">ex2</p>
+
+    <h2>mouseenter Event</h2>
+    <p id="ex3">ex3</p>
+
+    <h2>mouseleave Event</h2>
+    <p id="ex4">ex4</p>
+
+    <h2>blur Event</h2>
+    <form>
+        Name: <input id="ex5-1" type="text" name="fullname">
+        <br>
+        Email: <input id="ex5-2" type="text" name="email">
+    </form>
+    <button  id ="#ex6" type="button" class="MultiEventButton">多重事件註冊</button>
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -14,15 +31,48 @@
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
         //Click Event
-        $("#ex1").click(function (d) {
+        $("#ex1").click(function () {
             console.log($("#ex1").text())
-            //console.log($(d.currentTarget).text())
+            //console.log($(this).text())
         })
         //dbclick event
-        $("#ex2").dblclick(function (d) {
+        $("#ex2").dblclick(function () {
             alert($("#ex1").text())
-            //alert($(d.currentTarget).text())
+            //alert($(this).text())
         });
+        //mouseenter event
+        $("#ex3").mouseenter(function () {
+            alert($("#ex3").text())
+            //alert($(this).text())
+        });
+        //mouseleave event
+        $("#ex4").mouseleave(function () {
+            alert($("#ex4").text())
+            //alert($(this).text())
+        });
+        //focus event
+        $("#ex5-1").focus(function () {
+            $(this).css("background-color", "gray"); //#cccccc
+        });
+        //blur event
+        $("#ex5-2").blur(function () {
+            $(this).css("background-color", "white"); //#ffffff
+        });
+
+        //多重事件註冊
+        $(".MultiEventButton")
+            .on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+
 
     });
 </script>
