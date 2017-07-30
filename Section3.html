@@ -22,6 +22,8 @@
         Name: <input id="ex5-1" type="text" name="fullname">
         <br>
         Email: <input id="ex5-2" type="text" name="email">
+        <br>
+        KeyUpTest: <input id="ex5-3" type="text" name="Test">
     </form>
     <button  id ="#ex6" type="button" class="MultiEventButton">多重事件註冊</button>
 </body>
@@ -53,10 +55,15 @@
         //focus event
         $("#ex5-1").focus(function () {
             $(this).css("background-color", "gray"); //#cccccc
+            console.log($(this).val())
         });
         //blur event
         $("#ex5-2").blur(function () {
             $(this).css("background-color", "white"); //#ffffff
+        });
+        //keyup event
+        $("#ex5-3").keyup(function () {
+            console.log($(this).val())
         });
 
         //多重事件註冊
