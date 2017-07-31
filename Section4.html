@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p id="ex5">Test</p>
+    <button type="button" id="Show">Show</button>
+    <button type="button" id="Hide">Hide</button>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        $("#Show").click(function(){
+            $("#ex5").show()
+        })
+         $("#Hide").click(function(){
+            $("#ex5").hide()
+        })
+
+
+    });
+</script>
+
+</html>
