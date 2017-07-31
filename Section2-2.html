@@ -51,7 +51,22 @@
         <p>Remove child</p>
     </div>
     <p class="TestClass">Remove by Class</p>
+    <br>
+    <br>
 
+    <h2>jQuery CSS Class Example</h2>
+    <div id="ex5-1">
+        <p>Add .blue class</p>
+    </div>
+    <div id="ex5-2">
+        <p>Add .important child</p>
+    </div>
+   
+     <div id="ex5-3" class="important">
+        <p>Remove .important child</p>
+    </div>
+    <br>
+    <br>
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -85,6 +100,15 @@
         $("#ex4-2").empty()
         //移除具有TestClass的CSS Class的 p tag
         $("p").remove(".TestClass")
+        console.log("------------------------")
+
+        console.log("jQuery CSS Class Example")
+        //id ex5-1 DOM加入blue css class
+        $("#ex5-1").addClass("blue")
+        //id ex5-2加入blue important class
+        $("#ex5-2").addClass("important")
+        //移除id ex5-3 DOM的important css class
+        $("#ex5-3").removeClass("important")
         console.log("------------------------")
     });
 </script>
