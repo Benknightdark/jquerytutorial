@@ -11,9 +11,19 @@
 
 <body>
     <p id="ex1-1">This is <b> Ex1-1 </b> jQuery Get Example</p>
-    <input id="ex1-2" type="text" value="ex1-2"/>
+    <input id="ex1-2" type="text" value="ex1-2" />
     <br>
     <a id="ex1-3" href="http://www.google.com" id="w3s">Ex1-3 Google</a>
+
+    <br>
+    <br>
+
+    <p id="ex2-1"></p>
+    <p id="ex2-2"></p>
+    <input id="ex2-3" type="text" value="ex1-2" />
+    <br>
+    <a id="ex2-4" href="http://www.google.com" id="w3s">Ex2-4 set Google Url</a>
+
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -25,6 +35,13 @@
         console.log("Ex1-1 html: " + $("#ex1-1").html());
         console.log("Ex1-2 Value: " + $("#ex1-2").val());
         console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href"));
+        console.log("------------------------")
+
+        console.log("jQuery Set Example")
+        $("#ex2-1").text("ex2-1")
+        $("#ex2-2").html("<b>ex2-2</b>")
+        $("#ex2-3").val("ex2-3");
+        $("#ex2-4").attr("href", "http://www.google.com");
         console.log("------------------------")
     });
 </script>
