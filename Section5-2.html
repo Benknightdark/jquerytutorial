@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Parents Example</h2>
+    <div class="ancestors">body (great-great-grandparent)
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <h3>h3</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+
+        //parents example
+        $("h3").parents().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+
+    });
+</script>
+
+</html>
