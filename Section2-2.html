@@ -41,6 +41,7 @@
     <div id="ex4-2">
         <p>Remove child</p>
     </div>
+    <p class="TestClass">Remove by Class</p>
 
 </body>
 <!--引用jQuery套件>-->
@@ -73,6 +74,8 @@
         $("#ex4-1").remove()
         //移除id ex4-2底下所有的DOM
         $("#ex4-2").empty()
+        //移除具有TestClass的CSS Class的 p tag
+        $("p").remove(".TestClass")
         console.log("------------------------")
     });
 </script>
