@@ -61,15 +61,15 @@
     <div id="ex5-2">
         <p>Add .important child</p>
     </div>
-   
-     <div id="ex5-3" class="important">
+
+    <div id="ex5-3" class="important">
         <p>Remove .important child</p>
     </div>
     <br>
     <br>
-    
 
-     <h2>jQuery CSS Property Example</h2>
+
+    <h2>jQuery CSS Property Example</h2>
     <div id="ex6-1">
         <p>Add yellow back ground color css</p>
     </div>
@@ -78,6 +78,8 @@
     </div>
     <br>
     <br>
+
+
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -123,9 +125,14 @@
         console.log("------------------------")
 
         console.log("jQuery CSS property Example")
+        //加入background-color css property
         $("#ex6-1").css("background-color", "yellow");
-        $("#ex6-2").css({"background-color": "yellow", "font-size": "200%"});
-         console.log("------------------------")
+        
+        $("#ex6-2").css({
+            "background-color": "yellow",
+            "font-size": "200%"
+        });
+        console.log("------------------------")
 
     });
 </script>
