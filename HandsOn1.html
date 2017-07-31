@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <form>
+        Name: <input id="name" type="text" name="fullname"> 
+        Email: <input id="email" type="text" name="email">
+        <p id="result"></p>
+        <button id="btn1" type="button" class="formbtn">Submit</button>
+    </form>
+
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        $(".formbtn")
+            .on({
+                mouseenter: function () {
+                    $(this).css("background-color", "red");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "green");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                    console.log($("#name"))
+                    $("#result").text($("#name").val() + " " + $("#email").val())
+                }
+            });
+
+    });
+</script>
+
+</html>
