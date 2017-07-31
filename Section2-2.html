@@ -27,16 +27,20 @@
     <br>
     <br>
 
-     <h2>jQuery Add Example</h2>
+    <h2>jQuery Add Example</h2>
     <p id="ex3-1"> middle </p>
     <br>
     <p id="ex3-2">multi add：</p>
-     <br>
+    <br>
     <br>
 
     <h2>jQuery Remove Example</h2>
-    <div id="ex4-1"></div>
-    <div id="ex4-2"></div>
+    <div id="ex4-1">
+        <p>Remove ALL</p>
+    </div>
+    <div id="ex4-2">
+        <p>Remove child</p>
+    </div>
 
 </body>
 <!--引用jQuery套件>-->
@@ -45,23 +49,30 @@
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
         console.log("jQuery Get Example")
-        console.log("Ex1-1 Text: " + $("#ex1-1").text());
-        console.log("Ex1-1 html: " + $("#ex1-1").html());
-        console.log("Ex1-2 Value: " + $("#ex1-2").val());
-        console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href"));
+        console.log("Ex1-1 Text: " + $("#ex1-1").text());//取得文字
+        console.log("Ex1-1 html: " + $("#ex1-1").html());//取得html
+        console.log("Ex1-2 Value: " + $("#ex1-2").val());//取得值
+        console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href"));//取得html的值
         console.log("------------------------")
 
         console.log("jQuery Set Example")
-        $("#ex2-1").text("ex2-1")
-        $("#ex2-2").html("<b>ex2-2</b>")
-        $("#ex2-3").val("ex2-3");
-        $("#ex2-4").attr("href", "http://www.google.com");
+        $("#ex2-1").text("ex2-1")//設定文字
+        $("#ex2-2").html("<b>ex2-2</b>")//設定html
+        $("#ex2-3").val("ex2-3");// 設定值
+        $("#ex2-4").attr("href", "http://www.google.com");//設定href屬性的值
         console.log("------------------------")
 
         console.log("jQuery add Example")
-        $("#ex3-1").prepend("start")
-        $("#ex3-1").append("end")
-        $("#ex3-2").append("1 ","2 ","3 ")
+        $("#ex3-1").prepend("start")//加在ex3-1編號DOM的前方
+        $("#ex3-1").append("end")//加在ex3-1編號DOM的後方
+        $("#ex3-2").append("1 ", "2 ", "3 ")
+        console.log("------------------------")
+
+        console.log("jQuery Remove Example")
+        //移除id ex4-1全部的DOM
+        $("#ex4-1").remove()
+        //移除id ex4-2底下所有的DOM
+        $("#ex4-2").empty()
         console.log("------------------------")
     });
 </script>
