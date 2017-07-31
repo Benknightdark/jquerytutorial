@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .TestClass {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <p id="ex1-1">This is <b> Ex1-1 </b> jQuery Get Example</p>
+    <input id="ex1-2" type="text" value="ex1-2"/>
+    <br>
+    <a id="ex1-3" href="http://www.google.com" id="w3s">Ex1-3 Google</a>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        console.log("jQuery Get Example")
+        console.log("Ex1-1 Text: " + $("#ex1-1").text());
+        console.log("Ex1-1 html: " + $("#ex1-1").html());
+        console.log("Ex1-2 Value: " + $("#ex1-2").val());
+        console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href"));
+        console.log("------------------------")
+    });
+</script>
+
+</html>
