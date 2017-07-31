@@ -67,6 +67,17 @@
     </div>
     <br>
     <br>
+    
+
+     <h2>jQuery CSS Property Example</h2>
+    <div id="ex6-1">
+        <p>Add yellow back ground color css</p>
+    </div>
+    <div id="ex6-2">
+        <p>Add multi css property</p>
+    </div>
+    <br>
+    <br>
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -110,6 +121,12 @@
         //移除id ex5-3 DOM的important css class
         $("#ex5-3").removeClass("important")
         console.log("------------------------")
+
+        console.log("jQuery CSS property Example")
+        $("#ex6-1").css("background-color", "yellow");
+        $("#ex6-2").css({"background-color": "yellow", "font-size": "200%"});
+         console.log("------------------------")
+
     });
 </script>
 
