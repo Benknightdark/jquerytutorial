@@ -6,6 +6,15 @@
         .TestClass {
             color: red
         }
+
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: blue;
+        }
     </style>
 </head>
 
@@ -50,22 +59,22 @@
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
         console.log("jQuery Get Example")
-        console.log("Ex1-1 Text: " + $("#ex1-1").text());//取得文字
-        console.log("Ex1-1 html: " + $("#ex1-1").html());//取得html
-        console.log("Ex1-2 Value: " + $("#ex1-2").val());//取得值
-        console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href"));//取得html的值
+        console.log("Ex1-1 Text: " + $("#ex1-1").text()); //取得文字
+        console.log("Ex1-1 html: " + $("#ex1-1").html()); //取得html
+        console.log("Ex1-2 Value: " + $("#ex1-2").val()); //取得值
+        console.log("Ex1-3 attr value: " + $("#ex1-3").attr("href")); //取得html的值
         console.log("------------------------")
 
         console.log("jQuery Set Example")
-        $("#ex2-1").text("ex2-1")//設定文字
-        $("#ex2-2").html("<b>ex2-2</b>")//設定html
-        $("#ex2-3").val("ex2-3");// 設定值
-        $("#ex2-4").attr("href", "http://www.google.com");//設定href屬性的值
+        $("#ex2-1").text("ex2-1") //設定文字
+        $("#ex2-2").html("<b>ex2-2</b>") //設定html
+        $("#ex2-3").val("ex2-3"); // 設定值
+        $("#ex2-4").attr("href", "http://www.google.com"); //設定href屬性的值
         console.log("------------------------")
 
         console.log("jQuery add Example")
-        $("#ex3-1").prepend("start")//加在ex3-1編號DOM的前方
-        $("#ex3-1").append("end")//加在ex3-1編號DOM的後方
+        $("#ex3-1").prepend("start") //加在ex3-1編號DOM的前方
+        $("#ex3-1").append("end") //加在ex3-1編號DOM的後方
         $("#ex3-2").append("1 ", "2 ", "3 ")
         console.log("------------------------")
 
