@@ -5,41 +5,78 @@
 </head>
 
 <body>
-    author:<input type="text" id="author"> title:
-    <input type="text" id="title">
-    <br>
-    <h2>JSON stringy</h2>
-    <p id="jsonstring"></p>
+    author:<input type="text" id="author"> 
+    title:<input type="text" id="title">
 
-    <h2>$.each</h2>
-    author Data:
-    <p id="authordata1"></p>
-    title Data:
-    <p id="titledata1"></p>
 
-    <h2>for</h2>
-    author Data:
-    <p id="authordata2"></p>
-    title Data:
-    <p id="titledata2"></p>
-
+   
     <button type="button" id="Add">Add</button>
+    <ul id="postsdata">
+        
+    </ul>
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
 <script>
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
+        GetPostsData();
         $("#Add").click(function () {
-            var jsondata = []
-            jsondata.push({
+            var jsondata = {
                 author: $("#author").val(),
                 title: $("#title").val()
-            })
-
+            }
+            
+            $.ajax({
+                //web api網址
+                url: "http://localhost:3000/posts",
+                //Web Request類型
+                type: 'Post',
+                //回傳內容類型
+                contentType: "application/json; charset=utf-8",
+                //回傳資料型別
+                datatype: 'json',
+                //回傳給web api的資料
+                data: JSON.stringify(jsondata),
+                //當ajax發生錯誤會觸發此程式
+                error: function (xhr) {
+                    console.log(xhr);
+                },
+                //當ajax執行成功會觸發此程式
+                success: function (result) {
+                    console.log(result);
+                    GetPostsData()
+                },
+            });
 
         })
-  
+
+        function GetPostsData(){
+            $.ajax({
+                //web api網址
+                url: "http://localhost:3000/posts",
+                //Web Request類型
+                type: 'Get',
+                //回傳內容類型
+                contentType: "application/json; charset=utf-8",
+                //回傳資料型別
+                datatype: 'json',
+                //回傳給web api的資料
+               
+                //當ajax發生錯誤會觸發此程式
+                error: function (xhr) {
+                    console.log(xhr);
+                },
+                //當ajax執行成功會觸發此程式
+                success: function (result) {
+                    console.log(result);
+                    $("#postsdata").empty();
+                    $.each(result,function(i,o){
+                        $("#postsdata").append("<li>"+o.author+":"+ o.title+"</li>")
+                    })
+                },
+            });
+        }
     });
 </script>
 
