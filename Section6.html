@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <button type="button" id="Add">Add</button>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        //輸出posts資料
+        $.ajax({
+            //web api網址
+            url: "http://localhost:3000/posts",
+            //ajax類型
+            type: 'Get',
+            //回傳內容類型
+            contentType: "application/json; charset=utf-8",
+            //回傳資料型別
+            datatype: 'json',
+            //當ajax發生錯誤會觸發此程式
+            error: function (xhr) {
+                console.log('Error: ' + xhr.statusText);
+            },
+            //當ajax執行成功會觸發此程式
+            success: function (result) {
+                console.log(result);
+            },
+        });
+        //{"id":6, "title": "json-server2", "author": "typicode2"}
+
+        $("#Add").click(function () {
+            $.ajax({
+                //web api網址
+                url: "http://localhost:3000/posts",
+                //ajax類型
+                type: 'Post',
+                //回傳內容類型
+                contentType: "application/json; charset=utf-8",
+                //回傳資料型別
+                datatype: 'json',
+                //回傳給web api的資料
+                data:JSON.stringify({ title: "json-server23", author: "3223"}) ,//id:7,
+                //當ajax發生錯誤會觸發此程式
+                error: function (xhr) {
+                    console.log( xhr);
+                },
+                //當ajax執行成功會觸發此程式
+                success: function (result) {
+                    console.log(result);
+                },
+            });
+        })
+
+    });
+</script>
+
+</html>
