@@ -5,8 +5,25 @@
 </head>
 
 <body>
-    author:<input type="text" id="author">
-    title:<input type="text" id="title">
+    author:<input type="text" id="author"> title:
+    <input type="text" id="title">
+    <br>
+    <h2>JSON stringy</h2>
+    JSON String:
+    <p id="jsonstring"></p>
+
+    <h2>$.each</h2>
+    author Data:
+    <p id="authordata1"></p>
+    title Data:
+    <p id="titledata1"></p>
+
+    <h2>for</h2>
+    author Data:
+    <p id="authordata2"></p>
+    title Data:
+    <p id="titledata2"></p>
+    
     <button type="button" id="Add">Add</button>
 </body>
 <!--引用jQuery套件>-->
@@ -14,7 +31,26 @@
 <script>
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
-      
+        $("#Add").click(function () {
+            var jsondata = []
+            jsondata.push({
+                author: $("#author").val(),
+                title: $("#title").val()
+            })
+
+
+            $("#jsonstring").text(JSON.stringify(jsondata))
+
+            $.each(jsondata, function (i, o) {
+                $("#authordata1").text(o.author)
+                $("#titledata1").text(o.title)
+            })
+
+            for (var i = 0; i < jsondata.length; i++) {
+                $("#authordata2").text(jsondata[i].author)
+                $("#titledata2").text(jsondata[i].title)
+            }
+        })
 
     });
 </script>
