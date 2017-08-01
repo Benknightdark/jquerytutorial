@@ -35,6 +35,7 @@
         });
         //新增posts資料
         $("#Add").click(function () {
+            var AddData={ title:$("#title").val() , author: $("#author").val()}
             $.ajax({
                 //web api網址
                 url: "http://localhost:3000/posts",
@@ -45,7 +46,7 @@
                 //回傳資料型別
                 datatype: 'json',
                 //回傳給web api的資料
-                data:JSON.stringify({ title:$("#title").val() , author: $("#author").val()}) ,
+                data:JSON.stringify(AddData) ,
                 //當ajax發生錯誤會觸發此程式
                 error: function (xhr) {
                     console.log( xhr);
