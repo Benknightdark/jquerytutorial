@@ -5,6 +5,8 @@
 </head>
 
 <body>
+    author:<input type="text" id="author">
+    title:<input type="text" id="title">
     <button type="button" id="Add">Add</button>
 </body>
 <!--引用jQuery套件>-->
@@ -31,8 +33,7 @@
                 console.log(result);
             },
         });
-        //{"id":6, "title": "json-server2", "author": "typicode2"}
-
+        //新增posts資料
         $("#Add").click(function () {
             $.ajax({
                 //web api網址
@@ -44,7 +45,7 @@
                 //回傳資料型別
                 datatype: 'json',
                 //回傳給web api的資料
-                data:JSON.stringify({ title: "json-server23", author: "3223"}) ,//id:7,
+                data:JSON.stringify({ title:$("#title").val() , author: $("#author").val()}) ,
                 //當ajax發生錯誤會觸發此程式
                 error: function (xhr) {
                     console.log( xhr);
