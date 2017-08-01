@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .descendants * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Children Example</h2>
+    <div class="descendants" style="width:500px;" id="ex5-3-1">div (current element)
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+
+<h2>Find Example</h2>
+    <div class="descendants" style="width:500px;" id="ex5-3-2">div (current element)
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+
+        $("#ex5-3-1").children().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+    $("#ex5-3-2").find("span").css({"color": "red", "border": "2px solid red"});
+
+
+    });
+</script>
+
+</html>
