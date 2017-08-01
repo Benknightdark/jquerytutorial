@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    author:<input type="text" id="author"> title:
+    <input type="text" id="title">
+    <br>
+    <h2>JSON stringy</h2>
+    <p id="jsonstring"></p>
+
+    <h2>$.each</h2>
+    author Data:
+    <p id="authordata1"></p>
+    title Data:
+    <p id="titledata1"></p>
+
+    <h2>for</h2>
+    author Data:
+    <p id="authordata2"></p>
+    title Data:
+    <p id="titledata2"></p>
+
+    <button type="button" id="Add">Add</button>
+</body>
+<!--引用jQuery套件>-->
+<script src="./Scripts/jquery-3.2.1.min.js"></script>
+<script>
+    //當網頁的物件戴入完成後，執行下列程式
+    $(function () {
+        $("#Add").click(function () {
+            var jsondata = []
+            jsondata.push({
+                author: $("#author").val(),
+                title: $("#title").val()
+            })
+
+
+        })
+  
+    });
+</script>
+
+</html>
