@@ -97,7 +97,7 @@
         $("#ex2-1").text("ex2-1") //設定文字
         $("#ex2-2").html("<b>ex2-2</b>") //設定html
         $("#ex2-3").val("ex2-3"); // 設定值
-        $("#ex2-4").attr("href", "http://www.google.com"); //設定href屬性的值
+        $("#ex2-4").attr("href", "http://www.yahoo.com"); //設定href屬性的值
         console.log("------------------------")
 
         console.log("jQuery add Example")
@@ -112,7 +112,7 @@
         //移除id ex4-2底下所有的DOM
         $("#ex4-2").empty()
         //移除具有TestClass的CSS Class的 p tag
-        $("p").remove(".TestClass")
+      //  $("p").remove(".TestClass")
         console.log("------------------------")
 
         console.log("jQuery CSS Class Example")
@@ -121,7 +121,7 @@
         //id ex5-2加入blue important class
         $("#ex5-2").addClass("blue important")
         //移除id ex5-3 DOM的important css class
-        $("#ex5-3").removeClass("important")
+        $("#ex5-3").removeClass("important").addClass("blue").text("fuck")
         console.log("------------------------")
 
         console.log("jQuery CSS property Example")
