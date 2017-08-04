@@ -31,11 +31,17 @@
     //當網頁的物件戴入完成後，執行下列程式
     $(function () {
         $("#Add").click(function () {
-            var jsondata = []
-            jsondata.push({
+            //宣告一筆json
+            var AddJson = {
                 author: $("#author").val(),
                 title: $("#title").val()
-            })
+            }
+            console.log("AddJson", AddJson)
+
+            //Json陣列
+            var jsondata = []
+            jsondata.push(AddJson)
+            console.log("jsondata", jsondata)
 
 
             $("#jsonstring").text(JSON.stringify(jsondata))
