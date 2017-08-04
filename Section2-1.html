@@ -3,16 +3,21 @@
 <head>
     <title></title>
     <style>
-        .TestClass{
-            color:red
-        } 
+        .TestClass {
+            color: red
+        }
+
+        .t2 {
+            color: blue;
+            font-size: 200%
+        }
     </style>
 </head>
 
 <body>
-   <p id="TestID">IDSelector </p>
-   <p class="TestClass">ClassSelector </p>
-   <p>ElementSelector </p>
+    <p id="TestID">IDSelector </p>
+    <p class="TestClass">ClassSelector </p>
+    <p class="t2">ElementSelector </p>
 </body>
 <!--引用jQuery套件>-->
 <script src="./Scripts/jquery-3.2.1.min.js"></script>
@@ -22,9 +27,10 @@
         //Element Selector
         console.log("元素選擇器：", $("p").text())
         //Class Selector
-        console.log("類別選擇器：",$(".TestClass").text())
+        console.log("類別選擇器：", $(".TestClass").text())
         //ID Selector
-        console.log("ID選擇器：",$("#TestID").text())
-     });
+        console.log("ID選擇器：", $("#TestID").text())
+    });
 </script>
+
 </html>
