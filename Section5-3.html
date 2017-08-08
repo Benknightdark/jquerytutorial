@@ -24,7 +24,7 @@
         </p>
     </div>
 
-<h2>Find Example</h2>
+    <h2>Find Example</h2>
     <div class="descendants" style="width:500px;" id="ex5-3-2">div (current element)
         <p>p (child)
             <span>span (grandchild)</span>
@@ -45,7 +45,10 @@
             "border": "2px solid red"
         });
 
-    $("#ex5-3-2").find("span").css({"color": "red", "border": "2px solid red"});
+        $("#ex5-3-2").find("span").css({
+            "color": "red",
+            "border": "2px solid red"
+        });
 
 
     });
